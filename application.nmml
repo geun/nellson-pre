@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-	<!-- metadata, make sure 'package' is at least 2 segments (ie. com.myproject) -->
-	<app file="Nesllon" title="Nesllon" main="Main" package="" 
-		version="1.0.0" company="geun" />
-		
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="nellson" package="com.touchingsignal.nellson" version="1.0.0" company="Geun" />
+	
 	<!-- output -->
-	<window width="640" height="320" fps="60" orientation="landscape" resizable="true" />
-	<set name="BUILD_DIR" value="bin" />
+	<app main="com.touchingsignal.Main" file="nellson" path="bin" />
+	
+	<window background="#000000" fps="60" />
+	<window width="800" height="480" unless="mobile" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
 	
 	<!-- classpath, haxe libs -->
-	<classpath name="src" />
+	<source path="src" />
 	<haxelib name="nme" />
+	<haxelib name="actuate" />
 	
 	<!-- assets -->
-	<icon name="assets/nme.svg" />
-	<assets path="assets" include="*" exclude="nme.svg" />
+	<icon path="assets/nme.svg" />
+	<assets path="assets/img" rename="img" />
 	
-	<!-- DLLs -->
-	<ndll name="std" />
-	<ndll name="regexp" />
-	<ndll name="zlib" />
-	<ndll name="nme" haxelib="nme" />
+	<!-- optimize output -->
+	<haxeflag name="--dead-code-elimination" unless="haxe3" />
+	<haxeflag name="-dce" if="haxe3" />
 	
-	<!-- Windows app: hide console -->
-	<!--<setenv name="no_console" value="1" />-->
 </project>
