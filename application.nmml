@@ -16,7 +16,10 @@
 	<source path="src" />
 	<haxelib name="nme" />
 	<haxelib name="actuate" />
-	
+	<haxelib name="polygonal-core" />
+	<haxelib name="polygonal-ds" />
+	<haxelib nmae="minject" />
+		
 	<!-- assets -->
 	<icon path="assets/nme.svg" />
 	<assets path="assets/img" rename="img" />

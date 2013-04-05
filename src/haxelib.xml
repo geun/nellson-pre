@@ -2,6 +2,7 @@
     <user name="geun"/>	
 	<description>Touching Signal's Game Engine</description>
     <version name="0.1.0">Initialize project</version>
+	<depends name="polygonal-core" />    
     <depends name="polygonal-ds" />    
     <depends name="mmvc" />
 	<depends name="actuate" />  

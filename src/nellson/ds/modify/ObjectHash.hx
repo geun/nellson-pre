@@ -86,7 +86,8 @@ class ObjectHash <K, T> {
 	}
 	
 	
-	/** @private */ private inline function getID (key:K):Int {
+	/** @private */ 
+	private inline function getID (key:K):Int {
 		
 		#if cpp
 		
