@@ -21,10 +21,14 @@ class Game
 	private var entities:EntityList;
 	private var systems:SystemList;
 	//private var families:ObjectHash<Family<Dynamic>>;
-	private var families:ObjectHash<Dynamic, Family<Dynamic>>;
+	private var families:ObjectHash<Dynamic, IFamily<Dynamic>>;
 	
 	public var updateComplete:Signal0;
 	public var updating:Bool;
+	
+	public var familyClass:Dynamic;
+	
+	
 
 	public function new(injector:Injector) 
 	{
@@ -41,8 +45,10 @@ class Game
 	{
 		entities.add(entity); // add to entites List
 		entity.componentAdded.add(componentAdded);
+		entity.componentRemoved.add(componentRemoved);
 		
 		for (family in families)
+			
 		{
 			family.addIfMatch( entity );
 		}
@@ -51,6 +57,7 @@ class Game
 	public function removeEntity(entity:Entity):Void
 	{
 		entity.componentAdded.remove(componentAdded);
+		entity.componentRemoved.remove(componentRemoved);
 		for (family in families)
 		{
 			family.remove(entity);

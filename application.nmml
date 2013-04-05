@@ -18,7 +18,7 @@
 	<haxelib name="actuate" />
 	<haxelib name="polygonal-core" />
 	<haxelib name="polygonal-ds" />
-	<haxelib nmae="minject" />
+	<haxelib nmae="minject" />	
 		
 	<!-- assets -->
 	<icon path="assets/nme.svg" />

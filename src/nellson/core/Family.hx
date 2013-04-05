@@ -1,6 +1,5 @@
 package nellson.core;
 import nellson.core.abstract.IComponent;
-import nellson.core.abstract.IFamily;
 import nellson.core.abstract.Component;
 import nellson.core.Entity;
 //import nellson.ds.ObjectHash;
